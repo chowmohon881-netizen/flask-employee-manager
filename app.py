@@ -71,24 +71,29 @@ def edit_user(id):
 
 # Update user route (handle form submission)
 @app.route('/update_user/<int:id>', methods=['POST'])
+# Update user route (handle form submission)
 @app.route('/update_user/<int:id>', methods=['POST'])
 def update_user(id):
     user = User.query.get_or_404(id)
     name = request.form['name'].strip()
     email = request.form['email'].strip()
 
+    # Validation
     if not name or not email:
         return "⚠️ Error: Name and Email cannot be empty."
 
-    # Check if email belongs to another user
+    # Check if the new email belongs to another employee
     existing_user = User.query.filter_by(email=email).first()
     if existing_user and existing_user.id != user.id:
         return "⚠️ Error: This email is already used by another employee."
 
+    # Update and save changes
     user.name = name
     user.email = email
     db.session.commit()
+
     return redirect(url_for('show_users'))
+
 
 
 if __name__ == '__main__':
