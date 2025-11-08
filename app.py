@@ -5,7 +5,13 @@ from datetime import datetime
 app = Flask(__name__)
 
 # Database setup
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
+import os
+
+# Build a full path for the database that works locally & on Render
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+db_path = os.path.join(BASE_DIR, "users.db")
+app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{db_path}"
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -18,6 +24,7 @@ class User(db.Model):
 
 with app.app_context():
     db.create_all()
+print("✅ Database path:", db_path)
 
 # Routes
 @app.route('/')
