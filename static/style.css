@@ -1,0 +1,53 @@
+/* 🌙 Dark Neon Theme */
+body {
+  background: radial-gradient(circle at top, #101010, #000000 90%);
+  color: #e0e0e0;
+  font-family: 'Poppins', Arial, sans-serif;
+  text-align: center;
+  margin-top: 80px;
+}
+
+h2 {
+  color: #00ffcc;
+  text-shadow: 0px 0px 10px #00ffcc;
+}
+
+input {
+  padding: 10px;
+  border: 2px solid #00ffcc;
+  border-radius: 6px;
+  background-color: #1e1e1e;
+  color: #fff;
+  outline: none;
+  width: 220px;
+}
+
+input:focus {
+  border-color: #ff007f;
+  box-shadow: 0px 0px 8px #ff007f;
+}
+
+button {
+  background: linear-gradient(45deg, #ff007f, #00ffcc);
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 20px #00ffcc;
+}
+
+#result {
+  margin-top: 25px;
+  font-size: 1.3rem;
+  color: #ff007f;
+  text-shadow: 0px 0px 10px #ff007f;
+}
+

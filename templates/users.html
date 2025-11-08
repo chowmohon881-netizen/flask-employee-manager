@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Employees</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Employee List</h1>
+
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Date Added</th>
+      <th>Action</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.date_added.strftime("%Y-%m-%d %H:%M:%S") }}</td>
+     <td>
+  <a href="{{ url_for('edit_user', id=user.id) }}">✏️ Edit</a> |
+  <a href="{{ url_for('delete_user', id=user.id) }}">❌ Delete</a>
+</td>
+
+    </tr>
+    {% endfor %}
+  </table>
+
+  <a href="/">⬅️ Add New</a>
+</body>
+</html>
