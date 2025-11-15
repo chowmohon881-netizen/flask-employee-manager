@@ -1,53 +1,74 @@
-/* 🌙 Dark Neon Theme */
+/* --- GLOBAL BODY STYLE --- */
 body {
-  background: radial-gradient(circle at top, #101010, #000000 90%);
-  color: #e0e0e0;
-  font-family: 'Poppins', Arial, sans-serif;
-  text-align: center;
-  margin-top: 80px;
-}
-
-h2 {
+  background-color: #000b0f;
   color: #00ffcc;
-  text-shadow: 0px 0px 10px #00ffcc;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  padding-top: 60px;
 }
 
-input {
-  padding: 10px;
-  border: 2px solid #00ffcc;
-  border-radius: 6px;
-  background-color: #1e1e1e;
-  color: #fff;
-  outline: none;
-  width: 220px;
+/* --- HEADERS --- */
+h1, h2 {
+  color: #00ffcc;
+  text-shadow: 0 0 15px #00ffcc;
+  margin-bottom: 20px;
 }
 
-input:focus {
-  border-color: #ff007f;
-  box-shadow: 0px 0px 8px #ff007f;
-}
-
+/* --- BUTTONS --- */
 button {
-  background: linear-gradient(45deg, #ff007f, #00ffcc);
+  background-color: #00ffcc;
   color: #000;
-  font-weight: bold;
   border: none;
-  border-radius: 6px;
-  padding: 10px 20px;
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
-  margin-left: 10px;
+  transition: 0.3s;
 }
 
 button:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 0px 20px #00ffcc;
+  background-color: #00e6b8;
+  box-shadow: 0 0 20px #00ffcc;
+  transform:
+
+  .flash.success {
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-#result {
-  margin-top: 25px;
-  font-size: 1.3rem;
-  color: #ff007f;
-  text-shadow: 0px 0px 10px #ff007f;
+.flash.danger, .flash.error {
+  color: #ff0044;
+  text-shadow: 0 0 10px #ff0044, 0 0 20px #ff0044;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
+.messages {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.password-container {
+  position: relative;
+  display: inline-block;
+}
+
+.show-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #00fff2;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-shadow: 0 0 6px #00fff2, 0 0 12px #00fff2;
+}
+
+.show-password:hover {
+  color: #39ff14;
+  text-shadow: 0 0 8px #39ff14, 0 0 16px #39ff14;
+}
